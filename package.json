@@ -1,0 +1,30 @@
+{
+  "name": "@kiriminaja/types",
+  "version": "0.1.0",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    },
+    "./checkout": {
+      "types": "./dist/checkout.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "rimraf": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
