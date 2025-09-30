@@ -16,6 +16,7 @@ export interface IDetail {
       icon: string;
       label: string;
     }[];
+    show_image?: boolean;
     coupon?: boolean;
     copyright?: boolean;
   };
@@ -29,6 +30,7 @@ export interface IDetail {
     }[];
     price: number;
     publish_price: number;
+    mini_cart?: boolean;
     variant?: {
       entries: {
         id: string;
