@@ -19,6 +19,16 @@ export interface IDetail {
     show_image?: boolean;
     coupon?: boolean;
     copyright?: boolean;
+    custom_fields?: {
+      type: string;
+      label: string;
+      options?: {
+        label: string;
+        value: string;
+      }[]; // Used for select, combobox, and radio button
+      placeholder: string;
+      required: boolean;
+    }[];
   };
   product: {
     name: string;
@@ -29,7 +39,13 @@ export interface IDetail {
       src: string;
     }[];
     price: number;
+    payment_methods: {
+      label: string;
+      value: string;
+      logo?: string;
+    }[];
     publish_price: number;
+    force_insurance?: boolean;
     mini_cart?: boolean;
     variant?: {
       entries: {
