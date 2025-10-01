@@ -1,3 +1,10 @@
+export interface IBank {
+  id: number;
+  name: string;
+  account_name: string;
+  account_number: string;
+}
+
 export interface IDetail {
   config: {
     color: string;
@@ -9,14 +16,28 @@ export interface IDetail {
       with_icon?: boolean;
       icon: string;
     };
-    benefit?: boolean;
-    benefits?: string[];
-    guarantee?: boolean;
-    guarantees?: {
-      icon: string;
-      label: string;
-    }[];
+    on_success?: {
+      type?: "default" | "url" | "random_whatsapp";
+      props?: {
+        url?: string; // use for url
+        wa_phones?: string[]; // use for random_whatsapp
+        yt_url?: string; // use for default
+      };
+      bank_accounts?: IBank[]; // use for default
+    };
+    benefit: {
+      show: boolean;
+      items: string[];
+    };
+    guarantee: {
+      show: boolean;
+      items: {
+        icon: string;
+        label: string;
+      }[];
+    };
     show_image?: boolean;
+    show_description?: boolean;
     coupon?: boolean;
     copyright?: boolean;
     custom_fields?: {
@@ -39,7 +60,6 @@ export interface IDetail {
     description: string;
     medias: {
       key: string;
-      type: "image" | "video";
       src: string;
     }[];
     sku?: string;
@@ -57,7 +77,6 @@ export interface IDetail {
     payment_methods: {
       label: string;
       value: string;
-      logo?: string;
     }[];
     force_insurance?: boolean;
     form_status?: string;
@@ -81,6 +100,7 @@ export interface IDetail {
         label: string;
       }[];
       prices?: {
+        id: string;
         value_ids: string[];
         price: number;
         publish_price: number;
@@ -90,5 +110,7 @@ export interface IDetail {
     };
     created_at?: string;
     updated_at?: string;
+
+    yt_url?: string;
   };
 }
