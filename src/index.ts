@@ -10,6 +10,7 @@ export interface IDetail {
     color: string;
     scheme: string;
     responsive?: boolean;
+    show_input_label?: boolean;
     submit: {
       rounded: string;
       label: string;
