@@ -20,17 +20,21 @@ export interface IDetail {
     coupon?: boolean;
     copyright?: boolean;
     custom_fields?: {
+      id: string;
       type: string;
       label: string;
       options?: {
+        id: string;
         label: string;
-        value: string;
       }[]; // Used for select, combobox, and radio button
       placeholder: string;
       required: boolean;
     }[];
   };
   product: {
+    id?: number;
+    uuid?: string;
+    slug?: string;
     name: string;
     description: string;
     medias: {
@@ -38,7 +42,14 @@ export interface IDetail {
       type: "image" | "video";
       src: string;
     }[];
+    sku?: string;
     price: number;
+    package_type_id?: number;
+    package_type?: {
+      id: number;
+      name: string;
+      insurance: boolean;
+    };
     payment_methods: {
       label: string;
       value: string;
@@ -47,6 +58,12 @@ export interface IDetail {
     publish_price: number;
     force_insurance?: boolean;
     mini_cart?: boolean;
+    dimensions?: {
+      width: number;
+      height: number;
+      length: number;
+      weight: number;
+    };
     variant?: {
       entries: {
         id: string;
@@ -64,5 +81,7 @@ export interface IDetail {
         sku?: string;
       }[];
     };
+    created_at?: string;
+    updated_at?: string;
   };
 }
