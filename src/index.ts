@@ -43,7 +43,11 @@ export interface IDetail {
       src: string;
     }[];
     sku?: string;
+
     price: number;
+    publish_price: number;
+    cogs_price?: number;
+
     package_type_id?: number;
     package_type?: {
       id: number;
@@ -55,15 +59,17 @@ export interface IDetail {
       value: string;
       logo?: string;
     }[];
-    publish_price: number;
     force_insurance?: boolean;
+    form_status?: string;
     mini_cart?: boolean;
-    dimensions?: {
-      width: number;
-      height: number;
-      length: number;
-      weight: number;
-    };
+
+    // packaging
+    width: number;
+    height: number;
+    length: number;
+    weight: number;
+
+    member_address_id?: number;
     variant?: {
       entries: {
         id: string;
@@ -78,6 +84,7 @@ export interface IDetail {
         value_ids: string[];
         price: number;
         publish_price: number;
+        cogs_price?: number;
         sku?: string;
       }[];
     };
