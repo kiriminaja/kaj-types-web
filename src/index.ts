@@ -5,6 +5,16 @@ export interface IBank {
   account_number: string;
 }
 
+export type OnSuccessType = "default" | "url" | "random_whatsapp";
+export type GuaranteeType = {
+  icon?: string;
+  label: string;
+};
+export type PaymentMethod = {
+  label: string;
+  value: string;
+};
+
 export interface IDetail {
   config: {
     color: string;
@@ -18,7 +28,7 @@ export interface IDetail {
       icon: string;
     };
     on_success?: {
-      type?: "default" | "url" | "random_whatsapp";
+      type?: OnSuccessType;
       props?: {
         url?: string; // use for url
         wa_phones?: string[]; // use for random_whatsapp
@@ -32,10 +42,7 @@ export interface IDetail {
     };
     guarantee: {
       show: boolean;
-      items: {
-        icon: string;
-        label: string;
-      }[];
+      items: GuaranteeType[];
     };
     show_image?: boolean;
     show_description?: boolean;
@@ -75,10 +82,7 @@ export interface IDetail {
       name: string;
       insurance: boolean;
     };
-    payment_methods: {
-      label: string;
-      value: string;
-    }[];
+    payment_methods: PaymentMethod[];
     force_insurance?: boolean;
     form_status?: string;
     mini_cart?: boolean;
