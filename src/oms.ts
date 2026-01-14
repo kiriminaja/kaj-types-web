@@ -192,7 +192,7 @@ export type OmsBuilderTemplateInputOptionT = {
   is_default?: boolean
   required?: boolean
   is_active?: boolean
-  configuration?: OmsInputOptionConfigurationT[]
+  configurations?: OmsInputOptionConfigurationT[]
 }
 
 export type OmsCourierGroupServiceT = {
@@ -307,6 +307,7 @@ export type OmsBuilderTemplateSuccessConfigurationT = {
 }
 
 export type OmsBuilderTemplateT = {
+  id?: number
   name?: string
   header?: OmsBuilderTemplateHeaderT
   testimonial?: OmsBuilderTemplateTestimonialT
@@ -319,4 +320,9 @@ export type OmsBuilderTemplateT = {
   couriers?: OmsCourierGroupT[]
   voucher?: boolean
   success_configuration?: OmsBuilderTemplateSuccessConfigurationT
+}
+
+export type OmsDataT = {
+  product?: OmsProductCatalogDetailT
+  configuration?: OmsBuilderTemplateT
 }
