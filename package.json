@@ -1,6 +1,6 @@
 {
   "name": "@kiriminaja/types",
-  "version": "0.1.15",
+  "version": "0.1.18",
   "license": "MIT",
   "files": [
     "dist"
