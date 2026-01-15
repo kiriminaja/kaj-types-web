@@ -312,7 +312,7 @@ export type OmsBuilderTemplateT = {
   header?: OmsBuilderTemplateHeaderT
   testimonial?: OmsBuilderTemplateTestimonialT
   display_mode?: OmsBuilderTemplateDisplayModeT
-  guarantee_badges?: OmsBuilderTemplateGuaranteeBadgeT
+  guarantee_badge?: OmsBuilderTemplateGuaranteeBadgeT
   product_display?: OmsBuilderTemplateProductDisplayT
   product_variation?: OmsBuilderTemplateProductVariationT
   input_fields?: OmsBuilderTemplateInputOptionT[]
@@ -320,6 +320,7 @@ export type OmsBuilderTemplateT = {
   couriers?: OmsCourierGroupT[]
   voucher?: boolean
   success_configuration?: OmsBuilderTemplateSuccessConfigurationT
+  created_at?: string
 }
 
 export type OmsDataT = {
