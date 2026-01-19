@@ -119,3 +119,5 @@ export interface IDetail {
     yt_url?: string;
   };
 }
+
+export * from './oms'
