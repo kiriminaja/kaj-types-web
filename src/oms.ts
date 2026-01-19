@@ -187,6 +187,7 @@ export type OmsInputOptionConfigurationT = {
 
 export type OmsBuilderTemplateInputOptionT = {
   id?: number
+  resource_id?: number
   label?: string
   type?: 'text' | 'address' | 'long_text' | 'phone_number' | 'date'
   is_default?: boolean
