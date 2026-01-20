@@ -298,7 +298,7 @@ export type OmsBuilderTemplateSuccessConfigurationT = {
     }
   }
   redirect_web?: {
-    url?: string
+    url?: string | null
   }
   redirect_whatsapp?: {
     phone?: string
