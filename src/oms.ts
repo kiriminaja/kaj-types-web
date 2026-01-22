@@ -315,6 +315,7 @@ export type OmsCouponT = {
   quota?: number,
   type?: 'flat' | 'percentage',
   value?: number,
+  max_value?: number,
   min_price?: number,
   used_count?: number,
   products?: OmsProductCatalogDetailT[]
