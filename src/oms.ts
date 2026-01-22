@@ -307,6 +307,22 @@ export type OmsBuilderTemplateSuccessConfigurationT = {
   }
 }
 
+export type OmsCouponT = {
+  id?: number,
+  name?: string,
+  code?: string,
+  status?: 'active' | 'inactive',
+  quota?: number,
+  type?: 'flat' | 'percentage',
+  value?: number,
+  min_price?: number,
+  used_count?: number,
+  products?: OmsProductCatalogDetailT[]
+  start_at?: string,
+  end_at?: string,
+  created_at?: string,
+}
+
 export type OmsBuilderTemplateT = {
   id?: number
   name?: string
@@ -327,4 +343,5 @@ export type OmsBuilderTemplateT = {
 export type OmsDataT = {
   product?: OmsProductCatalogDetailT
   configuration?: OmsBuilderTemplateT
+  coupons?: OmsCouponT[]
 }
