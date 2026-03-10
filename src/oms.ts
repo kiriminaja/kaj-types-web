@@ -204,12 +204,12 @@ export type OmsProductCatalogDetailT = OmsProductInformationT &
     variants?: OmsProductVariantCombinationT[]
     member_product_id?: number
     can_connect_to_template?: boolean
-      checkout_form?: {
-        id?: number
-        link?: string
-        config_document_id?: string
-      }
-      event_trackers?: OmsProductEventTrackingT
+    checkout_form?: {
+      id?: number
+      link?: string
+      config_document_id?: string
+    }
+    event_trackers?: OmsProductEventTrackingT
   }
 
 export type OmsGuaranteeBadgeT = {
