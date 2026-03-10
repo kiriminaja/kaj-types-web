@@ -148,6 +148,39 @@ export type OmsProductCatalogSettingResourceT = {
   value?: string
 }
 
+export const OMS_PRODUCT_TRACKING_EVENTS = [
+  'ViewContent',
+  'Lead',
+  'AddToCart',
+  'ReceiverInfoCompleted',
+  'ShippingInfoCompleted',
+  'InitiateCheckout',
+  'AddPaymentInfo'
+] as const
+
+export const OMS_PRODUCT_CONVERSION_TRIGGERS = ['Page Load', 'Purchased'] as const
+
+export type OmsProductTrackingEventNameT = typeof OMS_PRODUCT_TRACKING_EVENTS[number]
+
+export type OmsProductConversionTriggerT = typeof OMS_PRODUCT_CONVERSION_TRIGGERS[number]
+
+export type OmsProductEventTrackingT = {
+  facebook_pixels?: {
+    id?: string
+    events?: OmsProductTrackingEventNameT[]
+  }[]
+  tiktok_pixels?: {
+    id?: string
+    events?: OmsProductTrackingEventNameT[]
+  }[]
+  google_ads?: {
+    conversion_id?: string
+    conversion_label?: string
+    trigger?: OmsProductConversionTriggerT
+  }
+  gtm_ids?: string[]
+}
+
 export type OmsProductCatalogDetailT = OmsProductInformationT &
   OmsProductWarehouseT & {
     id?: number
@@ -169,6 +202,14 @@ export type OmsProductCatalogDetailT = OmsProductInformationT &
     pricing?: OmsProductPriceT
     variant_types?: OmsProductVariantT['variant_types']
     variants?: OmsProductVariantCombinationT[]
+    member_product_id?: number
+    can_connect_to_template?: boolean
+      checkout_form?: {
+        id?: number
+        link?: string
+        config_document_id?: string
+      }
+      event_trackers?: OmsProductEventTrackingT
   }
 
 export type OmsGuaranteeBadgeT = {
