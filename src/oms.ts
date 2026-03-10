@@ -164,15 +164,15 @@ export type OmsProductTrackingEventNameT = typeof OMS_PRODUCT_TRACKING_EVENTS[nu
 
 export type OmsProductConversionTriggerT = typeof OMS_PRODUCT_CONVERSION_TRIGGERS[number]
 
+export type OmsProductEventTrackingPixelT = {
+  id?: string
+  name?: string
+  events?: OmsProductTrackingEventNameT[]
+}
+
 export type OmsProductEventTrackingT = {
-  facebook_pixels?: {
-    id?: string
-    events?: OmsProductTrackingEventNameT[]
-  }[]
-  tiktok_pixels?: {
-    id?: string
-    events?: OmsProductTrackingEventNameT[]
-  }[]
+  facebook_pixels?: OmsProductEventTrackingPixelT[]
+  tiktok_pixels?: OmsProductEventTrackingPixelT[]
   google_ads?: {
     conversion_id?: string
     conversion_label?: string
