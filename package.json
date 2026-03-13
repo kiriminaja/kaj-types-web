@@ -1,6 +1,6 @@
 {
   "name": "@kiriminaja/types",
-  "version": "0.1.25",
+  "version": "0.1.29",
   "license": "MIT",
   "files": [
     "dist"
@@ -10,13 +10,19 @@
     "clean": "rimraf dist",
     "prepublishOnly": "npm run build"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./checkout": {
-      "types": "./dist/checkout.d.ts"
+      "types": "./dist/checkout.d.ts",
+      "import": "./dist/checkout.js",
+      "default": "./dist/checkout.js"
     }
   },
   "sideEffects": false,
